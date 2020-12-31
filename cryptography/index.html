@@ -7,10 +7,11 @@
         /**
          * Begin of Caesar Cipher algorithm
         */
+       var caesar = new Caesar();
         var shift=10;
         var message="Happy New Year";
-        var messageCrypted = new Caesar().crypt(shift,message);
-        var messageDecrypted = new Caesar().decrypt(shift,messageCrypted);
+        var messageCrypted = caesar.crypt(shift,message);
+        var messageDecrypted = caesar.decrypt(shift,messageCrypted);
 
         
         var bruteForce = new Caesar().bruteForce(messageCrypted);
