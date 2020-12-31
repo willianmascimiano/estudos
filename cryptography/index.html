@@ -1,0 +1,45 @@
+<html>
+<head>
+    <script type="text/javascript" src="caesar_algorithm.js" ></script>
+    <script>
+
+
+        /**
+         * Begin of Caesar Cipher algorithm
+        */
+        var shift=10;
+        var message="Happy New Year";
+        var messageCrypted = new Caesar().crypt(shift,message);
+        var messageDecrypted = new Caesar().decrypt(shift,messageCrypted);
+
+        
+        var bruteForce = new Caesar().bruteForce(messageCrypted);
+
+
+
+        console.log("This is the shift %s", shift);
+        console.log("This is the original message %s", message);
+        console.log("This is the crypted message %s", messageCrypted);
+        console.log("This is the decrypted message %s", messageDecrypted);
+        console.log("----------");
+        console.log("This is the brute force, see the line 10.")
+
+        bruteForce.forEach((value,index)=>{
+            console.log(value);
+        });
+
+        /**
+         * End of Caesar Cipher Algorithm
+        */
+        
+        </script>
+        
+
+
+</head>
+<body></body>
+
+
+</html>
+
+
