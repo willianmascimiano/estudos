@@ -1,0 +1,48 @@
+<html>
+<head>
+    <script type="text/javascript" src="algorithm_util.js" ></script>
+    <script type="text/javascript" src="caesar_algorithm.js" ></script>
+    <script type="text/javascript" src="vigenere_algorithm.js" ></script>
+    <script>
+
+ 
+
+
+        /**
+         * Begin of Caesar Cipher algorithm
+        */
+       var caesar = new Caesar();
+        var shift=10;
+        var message="Happy New Year";
+        var messageCrypted = caesar.crypt(shift,message);
+        var messageDecrypted = caesar.decrypt(shift,messageCrypted);
+
+
+        /**
+         * End of Caesar Cipher Algorithm
+        */
+
+        var vigenere = new Vigenere(alphabet);
+        
+        
+        var vigenereCryptedMessage = vigenere.crypt("water", message);
+        var vigenereDecryptedMessage = vigenere.decrypt("water", "DAITPJEPCVWR");
+
+        var vigenereCryptedText = "DAITPJEPCVWR";
+
+        //console.log(vigenereCryptedMessage);
+        //console.log(vigenereDecryptedMessage);
+
+        console.log(vigenere.bruteForce(vigenereCryptedText));
+        
+        </script>
+        
+
+
+</head>
+<body></body>
+
+
+</html>
+
+

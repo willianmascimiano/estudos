@@ -1,13 +1,9 @@
 
-const alphabet = [
-    "A","B","C","D","E","F","G","H","I","J","K","L",
-    "M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"
-  ];
-  
-  const searchIndex = what=>alphabet.findIndex(el => el===what);
+
+  const searchIndexCaesar = what=>alphabet.findIndex(el => el===what);
   
   class Caesar {
-  
+      
   
   
       crypt(shift,message){
@@ -26,7 +22,7 @@ const alphabet = [
                   if(value==" "){
                          attackedMessage += " "; 
                   }else{
-                      var tmpShift = this.shiftGen(parseInt(searchIndex(value.toUpperCase()) + parseInt(i))) ;
+                      var tmpShift = this.shiftGen(parseInt(searchIndexCaesar(value.toUpperCase()) + parseInt(i))) ;
                       attackedMessage+=alphabet[tmpShift];
                   }
   
@@ -46,7 +42,7 @@ const alphabet = [
    //Generic Code to Encrypt and Decrypt  
    generic(type,shift,message){
   
-      if(shift<1||shift>26){
+      if(shift<0||shift>26){
           console.log("Number not allowed");
           return;
       }
@@ -60,10 +56,10 @@ const alphabet = [
   
           var tmpShift="";
           if(type=="crypt"){
-              var tmpShift = this.shiftGen(parseInt(searchIndex(value.toUpperCase()) + parseInt(shift))) ;
+              var tmpShift = this.shiftGen(parseInt(searchIndexCaesar(value.toUpperCase()) + parseInt(shift))) ;
                   cryptedMessage+=alphabet[tmpShift];
               }else if(type=="decrypt"){
-                  var tmpShift = this.shiftGen(parseInt(searchIndex(value.toUpperCase()) + parseInt(26-shift))  ) ;
+                  var tmpShift = this.shiftGen(parseInt(searchIndexCaesar(value.toUpperCase()) + parseInt(26-shift))  ) ;
                   cryptedMessage+=alphabet[tmpShift];
               }
           
