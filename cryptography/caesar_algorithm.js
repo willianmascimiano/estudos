@@ -23,32 +23,7 @@
       decrypt(shift,message){
        return this.generic("decrypt",shift,message);
    }
-      bruteForce(message){
-          var tmpMessage = message.split("");
-          var attackedMessage="";
-          var attackedMessageArray=new Array();
-          
-          for(var i=25;i>=1;i--){
-              tmpMessage.forEach((value,index)=>{
-                  if(value==" "){
-                         attackedMessage += " "; 
-                  }else{
-                      var tmpShift = this.shiftGen(parseInt(searchIndexCaesar(value.toUpperCase()) + parseInt(i))) ;
-                      attackedMessage+=alphabet[tmpShift];
-                  }
-  
-          });
-          //console.log(attackedMessage);
-          attackedMessageArray.push(attackedMessage);
-          attackedMessage="";
-          }
-          return attackedMessageArray;
-          
-      }
-   
-   
-  
-  
+
   
    //Generic Code to Encrypt and Decrypt  
    generic(type,shift,message){
@@ -80,6 +55,39 @@
      
      
      return cryptedMessage;
+    }
+
+
+
+    /***
+     * 
+     * Brute Force
+     * 
+     * 
+    */
+
+
+    bruteForce(message){
+        var tmpMessage = message.split("");
+        var attackedMessage="";
+        var attackedMessageArray=new Array();
+        
+        for(var i=25;i>=1;i--){
+            tmpMessage.forEach((value,index)=>{
+                if(value==" "){
+                       attackedMessage += " "; 
+                }else{
+                    var tmpShift = this.shiftGen(parseInt(searchIndexCaesar(value.toUpperCase()) + parseInt(i))) ;
+                    attackedMessage+=alphabet[tmpShift];
+                }
+
+        });
+        //console.log(attackedMessage);
+        attackedMessageArray.push(attackedMessage);
+        attackedMessage="";
+        }
+        return attackedMessageArray;
+        
     }
   
    

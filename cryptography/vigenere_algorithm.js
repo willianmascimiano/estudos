@@ -24,43 +24,6 @@ class Vigenere {
         return this.generic("decrypt", key,message);
     }
 
-    /**
-     * This code will break the message to only 30 characteres
-     * and will try to brute force each letter of the message until
-     * one word does effect when comparing with the LanguageDictionary.
-     */
-    bruteForce(message){
-
-        var caeserVigenere = new Caesar();
-        console.log(message);
-
-        var msgTemp1 = "";
-
-        var bruteForceKey = ""; 
-
-        for(var j = 0 ; j<=10;j++){
-           for(var i = 0 ; i<=25 ; i++){
-               bruteForceKey=alphabet[i];
-               console.log(bruteForceKey);
-            }
-        }
-
-                
-            //     for(var i=0;i<=25;i++){
-            //         message.split("").forEach((value,index)=>{
-            //         //console.log(alphabet[i]);
-            //         msgTemp1 += this.decrypt(alphabet[i], value);
-            //     });
-            // }
-           msgTemp1 +=" ";
-
-           console.log(msgTemp1);
-
-
-        return message;
-
-    }
-
     generic(type,key,message){
         
         var messageWithoutSpace = message.replace(/ /gi, "").toUpperCase();
@@ -72,16 +35,12 @@ class Vigenere {
         var keyLetter = null;
         var cryptedMessage = "";
         var caesarVigenere = new Caesar();
-
-
-        //console.log(key);
+ 
         messageWithoutSpace.split("").forEach((value, index)=>{
-            //messageIndex = caesarVigenere.shiftGen(searchIndexVigenere(value)-1);
-            
-
+ 
             keyLetter = key.split("")[index]; 
             keyIndex = caesarVigenere.shiftGen(searchIndexVigenere(keyLetter));
-            //console.log("The letter %s must be shifted to letter %s and the correspondent keyindex is %s", value, keyLetter, keyIndex)
+ 
             
             if(type=="crypt"){
                 cryptedMessage += caesarVigenere.crypt(keyIndex, value);
@@ -103,26 +62,52 @@ class Vigenere {
      */
     genKey(key,messageWithoutSpace){
         var tmpKey="";
-
-
-        //if(key.length<=messageWithoutSpace.length){
-            
             while(tmpKey.length<=messageWithoutSpace.length){
-                 
                 tmpKey=tmpKey+key;
             }
             tmpKey = tmpKey.substring(0,messageWithoutSpace.length);
-
-        //}else if(key.length==messageWithoutSpace.length){
-        //    tmpKey = key;
-        //}else if(key.length>=messageWithoutSpace.length){
-        //    tmpKey = key.substring(0,messageWithoutSpace.length-1);
-       // }
-
         return tmpKey.toUpperCase();
 
 
     }
+
+
+
+
+     /**
+     * This code will break the message to only 30 characteres
+     * and will try to brute force each letter of the message until
+     * one word does effect when comparing with the LanguageDictionary.
+     * 
+     * 
+     * NOT FINISHED YET.
+     */
+
+    bruteForce(message){
+
+        var caeserVigenere = new Caesar();
+        //console.log(message);
+
+        var msgTemp1 = "";
+
+        var bruteForceKey = ""; 
+
+        for(var j = 0 ; j<=10;j++){
+           for(var i = 0 ; i<=25 ; i++){
+               bruteForceKey=alphabet[i];
+               console.log(bruteForceKey);
+            }
+        }
+
+           msgTemp1 +=" ";
+
+          // console.log(msgTemp1);
+
+
+        return message;
+
+    }
+
 
 
 }
