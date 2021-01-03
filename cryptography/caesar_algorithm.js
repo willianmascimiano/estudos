@@ -1,4 +1,15 @@
 
+/**
+ * Created by Willian Mascimiano
+ * https://willian.eti.br/contato/
+ * 
+ * 
+ * Caesar Algorithm Cipher
+ * 
+ * 
+ */
+
+
 
   const searchIndexCaesar = what=>alphabet.findIndex(el => el===what);
   

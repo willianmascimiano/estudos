@@ -1,3 +1,14 @@
+/**
+ * Created by Willian Mascimiano
+ * https://willian.eti.br/contato/
+ * 
+ * 
+ * Vigenere Algorithm Cipher on Caesar Cipher Algorithm..
+ * 
+ * 
+ */
+
+
 
 const searchIndexVigenere = what=>alphabet.findIndex(el => el===what);
 
