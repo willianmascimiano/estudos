@@ -1,6 +1,6 @@
 ## Studies
 
-- Algorithms: 
+- Programing Language: 
     - Javascript
         - Data Structures: https://data-flair.training/blogs/javascript-data-structures/
 
